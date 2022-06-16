@@ -1,0 +1,47 @@
+a = int(input('Enter your value '))
+b = int(input('Enter another value '))
+print (a+b)
+
+a = int(input('Enter your value'))
+b = int(input('Enter your value'))
+print (a-b)
+
+a = int(input('Enter your value'))
+b = int(input('Enter your value'))
+print (a*b)
+
+a = int(input('Enter your value'))
+b = int(input('Enter your value'))
+print (a**b)
+
+a = int(input('Enter your value'))
+b = int(input('Enter your value'))
+print (a/b)
+
+mylist = [100,200,300,400,500]
+mylist[::-1]
+
+list1 = ["M", "na", "i", "Ke"]
+list2 = ["y", "me", "s", "lly"]
+list3 = [list1[0]+list2[0],list1[1]+list2[1],list1[2]+list2
+[2],list1[3]+list2[3]]
+
+list3
+
+list = [11, 45, 8, 23, 14, 12, 78, 45, 89]
+
+chunk1 = list[0:3]
+chunk1 = chunk1[::-1]
+
+chunk2 = list[3:6]
+chunk2 = chunk2[::-1]
+
+chunk3 = list[6:9]
+chunk3 = chunk3[::-1]
+
+print ("Chunk 1", chunk1)
+print ("Chunk 2", chunk2)
+print ("Chunk 3", chunk3)
+
+
+
