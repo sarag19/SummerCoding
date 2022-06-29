@@ -1,0 +1,38 @@
+import numpy as np
+import pandas as pd
+
+a = np.random.randint(0, 10, (20, 5))
+print(a)
+
+b = np.average(a, axis = 0)
+print(b[1])
+
+c = np.sum(a, axis = 0 )
+print(c[2] + c[3])
+
+
+
+import pandas as pd
+data=open('LOT-temp.csv')
+data = pd.read_csv('LOT-temp.csv')
+newdata = data.iloc[1000:2001]
+
+newdata.columns = ['id', 'room', 'noted_date', 'temp', 'location']
+
+print(newdata.columns)
+
+print(newdata['location'].value_counts())
+
+lout = newdata[newdata['location'] == 'Out']
+lin = newdata[newdata['location'] == 'In']
+
+temp_out = lout['temp']
+temp_out_mean = temp_out.mean()
+print("The average temperature taken outside is ",temp_out_mean)
+
+temp_in = lin['temp']
+temp_in_mean = temp_in.mean()
+print("The average temperature taken inside is ",temp_in_mean)
+
+lout.to_csv('lout.csv')
+lin.to_csv('lin.csv')
