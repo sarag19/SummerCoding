@@ -1,0 +1,46 @@
+n=101
+sum = 0 
+i=1
+for i in range(n):
+    if i<=100:
+        sum = sum+i
+        i=i+1
+sum
+
+
+lst1=["Joe", "Sarah", "Mike", "Jess", "", "Matt", "", "Greg"]
+lst2= 0 
+for name in lst1:
+    if name == ["Joe", "Sarah", "Mike", "Jess", "", "Matt", "", "Greg"]:
+        print("Joe", "Sarah", "Mike", "Jess", "Matt", "Greg")
+lst2=lst1
+lst2
+
+
+lst1=["Joe", "Sarah", "Mike", "Jess", "", "Matt", "", "Greg"]
+lst2= []
+for name in lst1:
+    if name != "":
+        lst2.append(name)
+lst2
+
+
+num1= int(input('Enter your value '))
+num2= int(input('Enter your value '))
+num3= int(input('Enter your value '))
+
+lst1=[num1,num2,num3]
+
+number1= int(input('Enter your value '))
+number2= int(input('Enter your value '))
+number3= int(input('Enter your value '))
+
+lst2=[number1,number2,number3]
+
+output = [lst1[0]*lst2[0],lst1[1]*lst2[1],lst1[2]*lst2[2]]
+
+for num in output: 
+    if num % 2 == 0:
+        print(num, end='')
+    else:
+        print("The result is odd")
