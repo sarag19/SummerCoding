@@ -1,0 +1,48 @@
+import pandas as pd
+import numpy as np
+
+student_data1 = pd.DataFrame({
+        'student_id': ['S1', 'S2', 'S3', 'S4', 'S5'],
+         'name': ['Danniella Fenton', 'Ryder Storey', 'Bryce Jensen', 'Ed Bernal', 'Kwame Morin'], 
+        'marks': [200, 210, 190, 222, 199]})
+
+student_data2 = pd.DataFrame({
+        'student_id': ['S4', 'S5', 'S6', 'S7', 'S8'],
+        'name': ['Scarlette Fisher', 'Carla Williamson', 'Dante Morse', 'Kaiser William', 'Madeeha Preston'], 
+        'marks': [201, 200, 198, 219, 201]})
+display('student_data1' , 'student_data2')
+
+combined = pd.concat([student_data1 , student_data2] , axis=0)
+combined
+
+
+import pandas as pd
+import numpy as np
+
+student_data3 = pd.DataFrame({
+        'student_id': ['S1', 'S2', 'S3', 'S4', 'S5'],
+         'name': ['Danniella Fenton', 'Ryder Storey', 'Bryce Jensen', 'Ed Bernal', 'Kwame Morin'], 
+        'marks_test1': [200, 210, 190, 222, 199]})
+
+student_data4 = pd.DataFrame({
+        'student_id': ['S1', 'S2', 'S3', 'S4', 'S5'],
+        'name': ['Danniella Fenton', 'Ryder Storey', 'Bryce Jensen', 'Ed Bernal', 'Kwame Morin'], 
+        'marks_test2': [201, 200, 198, 219, 201]})
+
+combined = pd.merge(student_data3, student_data4)
+combined
+
+
+import pandas as pd
+import numpy as np
+
+data1 = pd.DataFrame({'key1': ['K0', 'K0', 'K1', 'K2'],
+                     'key2': ['K0', 'K1', 'K0', 'K1'],
+                     'P': ['P0', 'P1', 'P2', 'P3'],
+                     'Q': ['Q0', 'Q1', 'Q2', 'Q3']}) 
+data2 = pd.DataFrame({'key1': ['K0', 'K1', 'K1', 'K2'],
+                      'key2': ['K0', 'K0', 'K0', 'K0'],
+                      'R': ['R0', 'R1', 'R2', 'R3'],
+                      'S': ['S0', 'S1', 'S2', 'S3']})
+combined = pd.merge(data1, data2 , left_on="key1", right_on='key2')
+combined
