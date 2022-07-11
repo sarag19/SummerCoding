@@ -1,0 +1,88 @@
+!pip install matplotlib
+import matplotlib.pyplot as plt
+import csv
+plt.style.use('classic')
+import numpy as np
+import pandas as pd
+df  = pd.read_csv("planetary_data_2.csv")
+x = np.linspace(0, 10, 30)
+y = np.sin(x)
+
+plt.plot(x, y, 'o', color='black');
+
+density = pd.read_csv('planetary_data_2.csv')
+
+fig, ax = plt.subplots(figsize=(12, 4))
+density.plot(ax=ax)
+ax.set(title='Density of planets',
+       ylabel='density',
+       xlabel='body')
+
+ax.annotate('local maximum', xy=(6.28, 1), xytext=(10, 4),
+            arrowprops=dict(facecolor='black', shrink=0.05))
+ax.annotate('local minimum', xy=(5 * np.pi, -1), xytext=(2, -6),
+            arrowprops=dict(arrowstyle="->",
+                            connectionstyle="angle3,angleA=0,angleB=-90"));
+
+
+
+import matplotlib.pyplot as plt
+labels = 'Mercury','Venus','Earth','Mars','Jupiter','Saturn'
+sizes = [3.30E+23,4.87E+24,5.97E+24,6.42E+23,1.90E+27,5.69E+26]
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+ax1.axis('equal')
+ax.set(title='Mass of planets')
+plt.show()
+
+
+import pandas as pd
+df  = pd.read_csv("births.csv")
+
+births = pd.read_csv('births.csv')
+
+quartiles = np.percentile(births['births'], [25, 50, 75])
+mu, sig = quartiles[1], 0.74 * (quartiles[2] - quartiles[0])
+births = births.query('(births > @mu - 5 * @sig) & (births < @mu + 5 * @sig)')
+
+births['day'] = births['day'].astype(int)
+
+births.index = pd.to_datetime(10000 * births.year +
+                              100 * births.month +
+                              births.day, format='%Y%m%d')
+births_by_date = births.pivot_table('births',
+                                    [births.index.month, births.index.day])
+births_by_date.index = [pd.datetime(1992, month, day)
+                        for (month, day) in births_by_date.index]
+
+fig, ax = plt.subplots()
+
+x = np.linspace(0, 20, 1000)
+ax.plot(x, np.cos(x))
+ax.axis('equal')
+
+ax.annotate('local maximum', xy=(6.28, 1), xytext=(10, 4),
+            arrowprops=dict(facecolor='black', shrink=0.05))
+
+ax.annotate('local minimum', xy=(5 * np.pi, -1), xytext=(2, -6),
+            arrowprops=dict(arrowstyle="->",
+                            connectionstyle="angle3,angleA=0,angleB=-90"));
+
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-white')
+import numpy as np
+
+ax1 = plt.axes()  # standard axes
+ax2 = plt.axes([0.65, 0.65, 0.2, 0.2])
+ax3 = plt.axes([0.65, 0.65, 0.2, 0.2])
+
+
+for i in range(1, 2):
+    plt.subplot(i)
+    plt.text(0.5, 0.5, str((2, 3, i)),
+             fontsize=18, ha='center')
+births_by_date.index = [pd.datetime(2000, month, day)
+                        for (month, day) in births_by_date.index]
+births_by_date.index = [pd.datetime(2003, month, day)
+                        for (month, day) in births_by_date.index]
